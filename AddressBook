@@ -47,7 +47,20 @@ public class AddressBookMain {
 	    	System.out.println(" ");
 	    	System.out.println("---------------------------------------------------------------");
                 break;
-
+             
+	      case 3:
+	    	
+	    	Scanner scan2=new Scanner(System.in);
+	    	System.out.println("Enter which record you want to update :");
+	    	int select=scan2.nextInt();
+	    	
+	    	if(select==1) {
+	    	firstPerson.updateInfo();                  //Update the record
+	    	}
+	    	else{
+	        secondPerson.updateInfo();
+	    	}
+	    	break;
 		}
 		 }
 	    }
@@ -68,7 +81,7 @@ public class Person{
 	
 	
 	
-	public void personInfo() {                                      //First Method 
+public void personInfo() {                                      //First Method 
 		
 		Scanner scan=new Scanner(System.in);
 		
@@ -114,10 +127,58 @@ public void viewPersonInfo() {                                    //Second Metho
 		System.out.println("State        :"+" "+state);
 		System.out.println("Zip-Code     :"+" "+zipCode);
 		System.out.println("Phone-Number :"+" "+phoneNumber);
-		System.out.println(" ");
-		
-		
+		System.out.println(" ");	
 		
 	}
+	
+public void updateInfo() {                                 //Third Method
+		
+		Scanner scan3=new Scanner(System.in);
+		Scanner scan4=new Scanner(System.in);
+		System.out.println("What info you want to update :");
+		System.out.println("1.First-Name");
+		System.out.println("2.Last-Name");
+		System.out.println("3.Address");
+		System.out.println("4.City");
+		System.out.println("5.State");
+		System.out.println("6.Zip-Code ");
+		System.out.println("7.Phone-Number");
+		System.out.println(" ");
+		
+		int choice=scan3.nextInt();
+		
+		switch(choice) {
+		case 1:
+			System.out.println("Edit First Name -");
+			firstName=scan4.nextLine();
+			break;
+		case 2:
+			System.out.println("Edit Last Name -");
+			lastName=scan4.nextLine();
+			break;
+		case 3:
+			System.out.println("Edit Address -");
+			address=scan4.nextLine();
+			break;
+		case 4:
+			System.out.println("Edit City -");
+			city=scan4.nextLine();
+			break;
+		case 5:
+			System.out.println("Edit State -");
+			state=scan4.nextLine();
+			break;	
+		case 6:
+			System.out.println("Edit ZipCode -");
+			zipCode=scan4.nextLine();
+			break;
+		case 7:
+			System.out.println("Edit PhoneNumber -");
+			phoneNumber=scan4.nextLine();
+			break;
+		}	
+		
+		System.out.println("-- Information Updated --");
+	}	
 }
 	    
