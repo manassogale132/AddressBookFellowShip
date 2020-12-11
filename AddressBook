@@ -61,6 +61,13 @@ public class AddressBookMain {
 	        secondPerson.updateInfo();
 	    	}
 	    	break;
+		
+	      case 4:
+	    
+	    	firstPerson.searchByCity();             //Search By City for first user.
+	    	secondPerson.searchByCity();            //Search By City for second user.
+	    	System.out.println("---------------------------------------------------------------");
+	    	break;
 		}
 		 }
 	    }
@@ -179,6 +186,21 @@ public void updateInfo() {                                 //Third Method
 		}	
 		
 		System.out.println("-- Information Updated --");
-	}	
+	}
+	
+public void searchByCity() {                                    //Fourth Method
+		
+		Scanner scan1=new Scanner(System.in);
+		System.out.println("Enter the City :");
+		String searchByCity=scan1.next();
+		
+		if(searchByCity.equals(city)) {
+			viewPersonInfo();
+		}
+		else {
+			System.out.println("No record .");
+			System.out.println(" ");
+			
+		}	
 }
 	    
