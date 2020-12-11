@@ -1,0 +1,257 @@
+import java.util.Scanner;
+
+public class AddressBookMain {
+
+	public static void main(String[] args) {
+		
+		Person firstPerson=new Person();           //Creating Object for first user.
+		Person secondPerson=new Person();          //Creating Object for second user.
+		                                           //(Note : In future can create multiple objects for multiple users)
+		
+		
+		Scanner scan=new Scanner(System.in);
+		
+		System.out.println("--Welcome to Address Book Program--");	
+		System.out.println("---------------------------------------------------------------");
+	    System.out.println(" ");
+	
+	    System.out.println("1. Add User(s) Information .");
+	    System.out.println(" ");
+	    System.out.println("2. View User(s) Information .");
+	    System.out.println(" ");
+	    System.out.println("3. Update the Information .");
+	    System.out.println(" ");
+	    System.out.println("4. Sort By City .");
+	    System.out.println(" ");
+	    System.out.println("5. Sort By State .");
+	     
+	    int input = 0;
+		do {
+	    int input1=scan.nextInt();
+	    
+	    switch(input1) {                              //Switch case to swap between multiple functions
+	    
+	    case 1:         
+	    	firstPerson.personInfo();                 //Method called to add first user info.
+	    		      
+	    	secondPerson.personInfo();                //Method called to add second first user info.            
+	        
+	    	break;
+	    	
+	    case 2:
+	    	System.out.println("---------------------------------------------------------------");
+	    	System.out.println(" ");
+	    	System.out.println("Currently stored information :-");
+			System.out.println(" ");
+	    	firstPerson.viewPersonInfo();             //To view the person(s) information currently stored.
+	    	
+	    	secondPerson.viewPersonInfo(); 
+	    	
+	    	System.out.println(" ");
+	    	System.out.println("---------------------------------------------------------------");
+            break;
+            
+            
+	    case 3:
+	    	
+	    	Scanner scan2=new Scanner(System.in);
+	    	System.out.println("Enter which record you want to update :");
+	    	int select=scan2.nextInt();
+	    	
+	    	if(select==1) {
+	    	firstPerson.updateInfo();                  //Update the record
+	    	}
+	    	else{
+	        secondPerson.updateInfo();
+	    	}
+	    	break;
+	    
+	    
+	    case 4:
+	    	
+	    	firstPerson.searchByCity();             //Search By City for first user.
+	    	secondPerson.searchByCity();            //Search By City for second user.
+	    	System.out.println("---------------------------------------------------------------");
+	    	break;
+	    
+	    case 5:
+	    	
+	    	firstPerson.searchByState();             //Search By State for first user.
+	    	secondPerson.searchByState();            //Search By State for second user.
+	    	System.out.println("---------------------------------------------------------------");
+	    	break;
+	    	
+	    default :
+	    	System.out.println("No such case.");
+	    	
+	    }
+	    }while(input!=5);
+	}
+
+}
+
+=============================================================================================================================================================================
+
+import java.util.Scanner;
+
+public class Person{
+	
+	String firstName;                                   //Variables
+	String lastName;                           
+	String address;
+	String city;
+	String state;
+	String zipCode;
+	String phoneNumber;                                 //Variables
+	
+	
+	
+	public void personInfo() {                                      //First Method 
+		
+		Scanner scan=new Scanner(System.in);
+		
+		System.out.println("---------------------------------------------------------------");
+		System.out.println("Please enter the details :-");
+		System.out.println(" ");
+		
+		System.out.println("1) Enter First-Name :");
+		firstName=scan.nextLine();
+		
+		System.out.println("2) Enter Last-Name :");
+		lastName=scan.nextLine();
+		
+		System.out.println("3) Enter Address :");
+		address=scan.nextLine();
+		
+		System.out.println("4) Enter City :");
+		city=scan.nextLine();
+		
+		System.out.println("5) Enter State :");
+		state=scan.nextLine();
+		
+		System.out.println("6) Enter Zip-Code :");
+		zipCode=scan.nextLine();
+		
+		System.out.println("7) Enter Phone-Number :");
+		phoneNumber=scan.nextLine();
+		
+		System.out.println(" ");
+		System.out.println("*Information Stored!");
+		System.out.println("---------------------------------------------------------------");
+		System.out.println(" ");
+		
+	}
+
+
+	 
+	public void viewPersonInfo() {                                    //Second Method
+		
+	
+		System.out.println("First-Name   :"+" "+firstName);
+		System.out.println("Last-Name    :"+" "+lastName);
+		System.out.println("Address      :"+" "+address);
+		System.out.println("City         :"+" "+city);
+		System.out.println("State        :"+" "+state);
+		System.out.println("Zip-Code     :"+" "+zipCode);
+		System.out.println("Phone-Number :"+" "+phoneNumber);
+		System.out.println(" ");
+		
+		
+		
+	}
+
+
+	public void updateInfo() {                                 //Third Method
+		
+		Scanner scan3=new Scanner(System.in);
+		Scanner scan4=new Scanner(System.in);
+		System.out.println("What info you want to update :");
+		System.out.println("1.First-Name");
+		System.out.println("2.Last-Name");
+		System.out.println("3.Address");
+		System.out.println("4.City");
+		System.out.println("5.State");
+		System.out.println("6.Zip-Code ");
+		System.out.println("7.Phone-Number");
+		System.out.println(" ");
+		
+		int choice=scan3.nextInt();
+		
+		switch(choice) {
+		case 1:
+			System.out.println("Edit First Name -");
+			firstName=scan4.nextLine();
+			break;
+		case 2:
+			System.out.println("Edit Last Name -");
+			lastName=scan4.nextLine();
+			break;
+		case 3:
+			System.out.println("Edit Address -");
+			address=scan4.nextLine();
+			break;
+		case 4:
+			System.out.println("Edit City -");
+			city=scan4.nextLine();
+			break;
+		case 5:
+			System.out.println("Edit State -");
+			state=scan4.nextLine();
+			break;	
+		case 6:
+			System.out.println("Edit ZipCode -");
+			zipCode=scan4.nextLine();
+			break;
+		case 7:
+			System.out.println("Edit PhoneNumber -");
+			phoneNumber=scan4.nextLine();
+			break;
+		}	
+		
+		System.out.println("-- Information Updated --");
+	}
+
+	
+	public void searchByCity() {                                    //Fourth Method
+		
+		Scanner scan1=new Scanner(System.in);
+		System.out.println("Enter the City :");
+		String searchByCity=scan1.next();
+		
+		if(searchByCity.equals(city)) {
+			viewPersonInfo();
+		}
+		else {
+			System.out.println("No record .");
+			System.out.println(" ");
+			
+		}
+		
+		
+	}
+
+
+	public void searchByState() {                                  //Fifth Method
+		
+		Scanner scan4=new Scanner(System.in);
+		System.out.println("Enter the State :");
+		String sortByState=scan4.next();
+		
+		if(sortByState.equals(state)) {
+			viewPersonInfo();
+		}
+		else {
+			System.out.println("No record .");
+			System.out.println(" ");
+			
+		}
+		
+		
+	}
+		
+	}
+	
+	
+	
+
+	
