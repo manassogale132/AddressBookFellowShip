@@ -34,6 +34,20 @@ public class AddressBookMain {
 	    	secondPerson.personInfo();                //Method called to add second first user info.            
 	        
 	    	break;
+		
+	     case 2:
+	    	System.out.println("---------------------------------------------------------------");
+	    	System.out.println(" ");
+	    	System.out.println("Currently stored information :-");
+			System.out.println(" ");
+	    	firstPerson.viewPersonInfo();             //To view the person(s) information currently stored.
+	    	
+	    	secondPerson.viewPersonInfo(); 
+	    	
+	    	System.out.println(" ");
+	    	System.out.println("---------------------------------------------------------------");
+                break;
+
 		}
 		 }
 	    }
@@ -90,4 +104,20 @@ public class Person{
 		
 	}
 
+public void viewPersonInfo() {                                    //Second Method
+		
+	
+		System.out.println("First-Name   :"+" "+firstName);
+		System.out.println("Last-Name    :"+" "+lastName);
+		System.out.println("Address      :"+" "+address);
+		System.out.println("City         :"+" "+city);
+		System.out.println("State        :"+" "+state);
+		System.out.println("Zip-Code     :"+" "+zipCode);
+		System.out.println("Phone-Number :"+" "+phoneNumber);
+		System.out.println(" ");
+		
+		
+		
+	}
+}
 	    
